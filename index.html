@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>百度换肤</title>
+	<style>
+	*{
+		margin:0;
+		padding:0;
+	}
+	body{
+   	background:url('images/bg0.jpg');
+	background-size: cover;
+	background-repeat:no-repeat;
+	background-position:center top;
+	background:100% auto;
+	}
+	a.btn{
+		color:#fff;
+		font-size:14px;
+		text-decoration:none;
+		background-color:rgba(0,50,100,0.6);
+		display:block;
+		width:50px;
+		height:25px;
+		line-height:25px;
+		text-align:center;
+		margin-top:15px;
+		margin-left:30px;
+		border-radius:4px;
+		}
+	a.btn:hover{
+		background:#E7BE92;	
+		color:#000000;
+	}
+	.bg{
+		width:100%;
+		height:280px;
+		background:#fff;
+		position:fixed;
+		left:0;
+		top:0;
+		display:none;
+	}
+	.bg .top{
+		width:100%;
+		height:45px;
+		border-bottom:1px solid #ddd;
+	}
+	.bg .top .top-con{
+		width:1000px;
+		height:45px;
+		margin:0 auto;
+	}
+	.bg .top .top-con .nav{
+		width:600px;
+		height:45px;
+		float:left;
+	}
+	.bg .top .top-con .nav ul li{
+		list-style:none;
+		float:left;
+		line-height:45px;
+		margin-right:10px;
+		font-size:14px;
+		padding:0 5px;
+		font-family:"微软雅黑";
+	}
+	.bg .top .top-con .nav ul li.first{
+		background:#1d85ed;
+	}
+	.bg .top .top-con .up{
+		width:45px;
+		height:45px;
+		float:right;
+	}
+	.bg .bg-pic{
+		width:1000px;
+		height:190px;
+		margin:25px auto 0;
+	}
+	.bg .bg-pic .big-pic{
+		width:590px;
+		height:190px;
+		float:left;
+	}
+	
+	.bg .bg-pic .big-pic ul li{
+		width:97px;
+		height:59px;
+		list-style:none;
+		float:left;
+		margin-right:1px;
+		margin-bottom:1px;
+	}
+	.bg .bg-pic .big-pic ul li.big{
+		width:195px;
+		height:119px;
+	}
+
+	.bg .bg-pic .big-pic ul li.last{
+		margin-top:-59px;
+	}
+	.bg .bg-pic .big-pic ul li img{
+		width:100%;
+		height:100%;
+	}
+	.bg .bg-pic .show{
+		width:262px;
+		height:160px;
+		background:url("images/0.jpg");	
+		float:right;
+	}
+</style>	
+ </head>
+ <body>
+	<a class ="btn" href="javascript:">换肤</a> 
+	 <div class="bg">
+		 <div class="top">
+			<div class="top-con">
+				<div class="nav">
+					<ul>
+						<li class="first">推荐</li>
+						<li>明星</li>
+						<li>风景</li>
+						<li>简约</li>
+						<li>炫彩</li>
+						<li>花草集</li>
+						<li>小清新</li>
+						<li>台湾特辑</li>
+						<li>自定义</li>
+						<li>最近使用</li>
+					</ul>
+				</div>
+				<div class="up"><img src="images/sq.png"></div>
+			</div>
+		 </div> 
+		 <div class="bg-pic">
+			<div class="big-pic">
+			<ul>
+				<li class="big" date="bg0.jpg"><img src="images/0.jpg"></li>
+				<li date="bg1.jpg"><img src="images/1.jpg"></li>
+				<li date="bg2.jpg"><img src="images/2.jpg"></li>
+				<li date="bg3.jpg"><img src="images/3.jpg"></li>
+				<li date="bg4.jpg"><img src="images/4.jpg"></li>
+				<li date="bg5.jpg"><img src="images/5.jpg"></li>
+				<li date="bg6.jpg" class="big"><img src="images/6.jpg"></li>
+				<li date="bg7.jpg"><img src="images/7.jpg"></li>
+				<li date="bg8.jpg"><img src="images/8.jpg"></li>
+				<li date="bg9.jpg" class="last"><img src="images/9.jpg"></li>
+				<li date="bg10.jpg"date="bg0.jpg" class="last"><img src="images/10.jpg"></li>
+				<li date="bg11.jpg" class="last"><img src="images/11.jpg"></li>
+			</ul>
+			</div>
+			<div class="show"><img src="images/yl.png"></div>
+		 </div>
+	 </div> 
+ </body>
+ 	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript">
+	$('a.btn').click(function(){
+		$('.bg').slideDown();
+	});
+	$('.up').click(function(){
+		$('.bg').slideUp();
+	});
+	$('.bg .bg-pic .big-pic ul li').hover(function(){
+		var bigPic = $(this).attr('date');
+		var showPic = $(this).find('img').attr('src');
+		$('body').css('background-image',"url('images/"+bigPic+"')");
+		$('.show').css('background-image',"url('"+showPic+"')")
+	});
+	</script>
+</html>
